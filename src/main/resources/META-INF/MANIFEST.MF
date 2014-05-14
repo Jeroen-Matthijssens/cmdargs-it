@@ -1,1 +1,2 @@
-Main-Class: it.tutske.cmdargs.Main
+Main-Class: it.tutske.cmdargs.BootstrapMain
+Class-Path: dependency/cmdargs-1.0.0-SNAPSHOT.jar dependency/utils-1.0.0-SNAPSHOT.jar

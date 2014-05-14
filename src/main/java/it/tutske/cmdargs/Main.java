@@ -3,6 +3,7 @@ package it.tutske.cmdargs;
 import java.util.List;
 
 import org.tutske.cmdargs.*;
+import org.tutske.cmdargs.exceptions.*;
 
 
 public class Main {
@@ -15,8 +16,9 @@ public class Main {
 
 	public static void main (String [] args) {
 		Parser parser = ParserFactory.newInstance (Options.scheme);
-		ParsedCommand parsed = parser.parse (args);
-		new Main (parsed).run ();
+
+		try { new Main (parser.parse (args)).run (); }
+		catch (CommandLineException exception) { parser.printError (); }
 	}
 
 	public void run () {
